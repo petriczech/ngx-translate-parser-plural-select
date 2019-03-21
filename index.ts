@@ -110,8 +110,7 @@ const I18N_PIPES = {
 			return mapper.hasOwnProperty(value)
 				? mapper[value]
 				: [
-				...(numValue >= 10 && numValue < 20) ? ['many'] : lastDigit[numValue % 10] || ['many'],
-				...(numValue >= 20) ? ['many'] : [], 'other'
+				...(numValue >= 10) ? ['many'] : lastDigit[numValue % 10] || ['many'], 'other'
 			].filter(key => mapper.hasOwnProperty(key)).map(key => mapper[key])[0] || '';
 		}
 		return mapper['other'] == null ? '' : mapper['other'];
